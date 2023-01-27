@@ -4,15 +4,7 @@
     <div class="container">
         <h1 class="text-center my-3">Modifica {{ $project->name }}</h1>
         {{-- Condizione Error --}}
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('commons.error')
             
         <form action="{{ route('admin.projects.update', $project) }}" method="POST">
             @csrf
