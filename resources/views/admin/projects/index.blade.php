@@ -3,6 +3,11 @@
 @section('content')
 <div class="container">
     <h1>Lista Progetti</h1>
+    @if (session('message'))
+    <div class="alert alert-success">
+        {{session('message')}}
+    </div>
+    @endif
     <table class="table table-dark table-striped">
         <thead>
             <tr>

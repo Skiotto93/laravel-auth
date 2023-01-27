@@ -49,7 +49,7 @@ class ProjectController extends Controller
 
         $new_project->save();
 
-        return redirect()->route('admin.projects.index')->with('message', 'Progetto aggiunto con successo!');
+        return redirect()->route('admin.projects.index')->with('message', 'Il progetto è stato aggiunto con successo!');
     }
 
     /**
