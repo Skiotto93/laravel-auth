@@ -27,6 +27,7 @@
                 <td>{{$project->name_client}}</td>
                 <td>
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-success">Dettagli</a>
+                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">Modifica</a>
                 </td>
             </tr>                
             @endforeach
