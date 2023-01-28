@@ -21,10 +21,6 @@
                 <label for="description" class="form-label">Descrizione:</label>
                 <textarea class="form-control" id="description" name="description" rows="5" >{{ old('description', $project->description) }}</textarea>
             </div>
-            {{-- <div class="mb-3">
-                <label for="slug" class="form-label">Slug:</label>
-                <input class="text" id="slug" name="slug" rows="5">
-            </div> --}}
             <div class="text-center mt-4">
                 <button type="submit" class="btn btn-warning">Modifica</button>
             </div>

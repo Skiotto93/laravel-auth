@@ -3,11 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Lista Progetti</h1>
-    @if (session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-    @endif
+    @include('commons.message')
     <table class="table table-dark table-striped">
         <thead>
             <tr>
@@ -31,7 +27,7 @@
                     <form action="{{ route('admin.projects.destroy', $project) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        
+
                         <button class="btn btn-danger">Elimina</button>
                     </form>
                 </td>
