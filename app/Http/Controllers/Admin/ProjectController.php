@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
-use illuminate\Support\Str;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -42,11 +43,14 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
 
+        $img_path = Storage::put('uploads', $data['cover_image']);
+
         $new_project = new Project;
         
         $new_project->fill($data);
         $new_project->slug = Str::slug($new_project->name);
-
+        $new_project->cover_image = $img_path;
+        
         $new_project->save();
 
         return redirect()->route('admin.projects.index')->with('message', "Il progetto: $new_project->name, è stato aggiunto con successo!");

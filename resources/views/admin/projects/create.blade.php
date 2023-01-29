@@ -6,7 +6,7 @@
         {{-- Condizione Error --}}
         @include('commons.error')
             
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -20,6 +20,10 @@
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione:</label>
                 <textarea class="form-control" id="description" name="description" rows="5" >{{ old('description') }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="cover_image" class="form-label">Immagine:</label>
+                <input type="file" class="form-control" id="cover_image" name="cover_image" value="{{ old('cover_image') }}">
             </div>
             <div class="text-center mt-4">
                 <button type="submit" class="btn btn-primary">Crea</button>
