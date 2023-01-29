@@ -9,13 +9,15 @@
             <p class="my-3">
                 <strong>Descrizione: </strong>{{$project->description}}
             </p>
-            <div>
-                <strong>Immagine: </strong>
-            </div>
         </div>
         <div>
             @if ($project->cover_image)
-                <img class="my-4" src="{{asset('storage/' . $project->cover_image)}}" alt="{{$project->name}}">
+            <div>
+                <strong>Immagine: </strong>
+            </div>
+            <div class="d-flex justify-content-center">
+                <img class="my-4 img-thumbnail img-fluid" src="{{asset('storage/' . $project->cover_image)}}" alt="{{$project->name}}">
+            </div>
             @endif
         </div>
         <div class="d-flex justify-content-center">
